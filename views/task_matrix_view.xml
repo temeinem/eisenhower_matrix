@@ -1,1 +1,37 @@
+<odoo>
+    <data>
+        <record id="task_matrix_tree_view" model="ir.ui.view">
+            <field name="name">task.matrix.tree</field>
+            <field name="model">task.matrix</field>
+            <field name="arch" type="xml">
+                <tree string="Task Matrix">
+                    <field name="name"/>
+                    <field name="urgent"/>
+                    <field name="important"/>
+                    <field name="category"/>
+                </tree>
+            </field>
+        </record>
+        <record id="task_matrix_form_view" model="ir.ui.view">
+            <field name="name">task.matrix.form</field>
+            <field name="model">task.matrix</field>
+            <field name="arch" type="xml">
+                <form string="Task Matrix">
+                    <group>
+                        <field name="name"/>
+                        <field name="urgent"/>
+                        <field name="important"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="action_task_matrix" model="ir.actions.act_window">
+            <field name="name">Tasks</field>
+            <field name="res_model">task.matrix</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="main_task_matrix_menu" name="Tasks"/>
+        <menuitem id="task_matrix_menu" name="Tasks" parent="main_task_matrix_menu" action="action_task_matrix"/>
+    </data>
+</odoo>
 
